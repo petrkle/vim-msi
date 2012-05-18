@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?define ProductVersion  = "7.3.46"?>
+<?define ProductName  = "vim"?>
+<?define linkText  = "gVim"?>
+<?define vimDir  = "vim73"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<Product Id='a9dbc6e7-9cdc-448f-9447-06bcf0b5d782'
+		Name='$(var.ProductName) $(var.ProductVersion)'
+		Language='1033' 
+		Version='$(var.ProductVersion)'
+		Manufacturer='github.com/petrkle/vim-msi'
+		UpgradeCode='55032f9f-012d-4e6c-8780-f47b50e4a708'>
+
+	<Package Description='$(var.ProductName) $(var.ProductVersion)'
+		Comments='$(var.ProductName) $(var.ProductVersion)'
+		Manufacturer='github.com/petrkle/vim-msi'
+		InstallerVersion='200'
+		Compressed='yes' 
+		InstallScope='perMachine' />
+
+	<InstallExecuteSequence>
+		<RemoveExistingProducts After="InstallInitialize" />
+		<Custom Action="SetARPINSTALLLOCATION" After="InstallValidate" />
+	</InstallExecuteSequence>
+
+	<Upgrade Id='55032f9f-012d-4e6c-8780-f47b50e4a708'>
+		<UpgradeVersion OnlyDetect='no'
+			Property='PREVIOUSFOUND'
+			Minimum='7.3.45'
+			IncludeMinimum='yes'
+			Maximum='$(var.ProductVersion)'
+			IncludeMaximum='no' />
+	</Upgrade>
+
+	<?include minimalui.wxs ?>
+
+  <UIRef Id="WixUI_Common" />
+
+	<WixVariable Id="WixUIBannerBmp" Value="bitmaps\top.bmp" />
+	<WixVariable Id="WixUIDialogBmp" Value="bitmaps\bg.bmp" />
+	<Icon Id="ProductIcon" SourceFile="bitmaps\vim.ico"/>
+	<Property Id="ARPPRODUCTICON" Value="ProductIcon" />
+	<Property Id='ARPCOMMENTS' Value="$(var.ProductName) $(var.ProductVersion)" />
+	<Property Id='ARPCONTACT' Value="http://www.vim.org/community.php" />
+	<Property Id='ARPHELPLINK' Value="http://www.vim.org/docs.php" />
+	<Property Id='ARPURLUPDATEINFO' Value="http://www.vim.org/news/news.php" />
+	<Property Id='ARPHELPTELEPHONE' Value="+000 123 456 789" />
+	<Property Id='ARPREADME' Value="http://www.vim.org/docs.php" />
+	<Property Id='ARPURLINFOABOUT' Value="https://github.com/petrkle/vim-msi" />
+
+	<Feature Id='main' Title='vim' Description='$(var.ProductName) $(var.ProductVersion)' Level='1'>
+		<?include componets.wxs ?>
+	</Feature>
+
+	<Media Id='1' Cabinet='vim.cab' EmbedCab='yes' CompressionLevel='high' />
+
+	<Directory Id='TARGETDIR' Name='SourceDir'>
+		<Directory Id="ProgramFilesFolder">
+			<Directory Id="INSTALLDIR" Name="vim">
+				<?include files.wxs ?>
+				<Directory Id="DesktopFolder" Name="Desktop" />
+				<Directory Id="ProgramMenuFolder" Name="Programs" />
+			</Directory>
+		</Directory>
+	</Directory>
+
+	<Icon Id="VIM.ico" SourceFile="bitmaps\vim.ico" />
+	<CustomAction Id="SetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[INSTALLDIR]" />
+	</Product>
+</Wix>
