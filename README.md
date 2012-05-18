@@ -10,9 +10,9 @@ command line.
 Contain
 =======
 
-ftp://ftp.vim.org/pub/vim/pc/vim73_46rt.zip
-ftp://ftp.vim.org/pub/vim/pc/gvim73_46ole.zip
-iconv.dll from http://sourceforge.net/projects/gettext
+- ftp://ftp.vim.org/pub/vim/pc/vim73_46rt.zip
+- ftp://ftp.vim.org/pub/vim/pc/gvim73_46ole.zip
+- iconv.dll from http://sourceforge.net/projects/gettext
 
 Download
 ========
