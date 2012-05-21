@@ -4,5 +4,7 @@ vim.wixobj: vim.wxs files.wxs componets.wxs minimalui.wxs
 	candle.exe vim.wxs
 clean:
 	del /F /Q vim.wixobj vim.wixpdb vim.msi
+install:
+	msiexec /i vim.msi /qr
 
 #heat dir vim73 -var var.vimDir -gg -ke -sfrag -out files.wxs

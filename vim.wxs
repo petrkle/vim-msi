@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?define ProductVersion  = "7.3.46"?>
+<?define ProductVersion  = "7.3.514"?>
 <?define ProductName  = "vim"?>
 <?define linkText  = "gVim"?>
 <?define vimDir  = "vim73"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-	<Product Id='a9dbc6e7-9cdc-448f-9447-06bcf0b5d782'
+	<Product Id='90beb97c-472b-474c-8d61-3b21c2968632'
 		Name='$(var.ProductName) $(var.ProductVersion)'
 		Language='1033' 
 		Version='$(var.ProductVersion)'
