@@ -12,7 +12,6 @@ Contain
 
 - ftp://ftp.vim.org/pub/vim/pc/vim73_46rt.zip
 - ftp://ftp.vim.org/pub/vim/pc/gvim73_46ole.zip
-- http://cream.sf.net
 - iconv.dll from http://sourceforge.net/projects/gettext
 
 Download

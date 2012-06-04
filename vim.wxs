@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?define ProductVersion  = "7.3.514"?>
-<?define ProductName  = "vim"?>
-<?define linkText  = "gVim"?>
-<?define vimDir  = "vim73"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-	<Product Id='90beb97c-472b-474c-8d61-3b21c2968632'
+	<Product Id='8747abf8-9aea-4c69-840b-7ddd6afa1918'
 		Name='$(var.ProductName) $(var.ProductVersion)'
 		Language='1033' 
 		Version='$(var.ProductVersion)'
@@ -17,6 +13,7 @@
 		Manufacturer='github.com/petrkle/vim-msi'
 		InstallerVersion='200'
 		Compressed='yes' 
+		Keywords='vim, gvim, text editor'
 		InstallScope='perMachine' />
 
 	<InstallExecuteSequence>
@@ -50,18 +47,16 @@
 	<Property Id='ARPURLINFOABOUT' Value="https://github.com/petrkle/vim-msi" />
 
 	<Feature Id='main' Title='vim' Description='$(var.ProductName) $(var.ProductVersion)' Level='1'>
-		<?include componets.wxs ?>
+		<?include components.wxs ?>
 	</Feature>
 
 	<Media Id='1' Cabinet='vim.cab' EmbedCab='yes' CompressionLevel='high' />
 
 	<Directory Id='TARGETDIR' Name='SourceDir'>
 		<Directory Id="ProgramFilesFolder">
-			<Directory Id="INSTALLDIR" Name="vim">
 				<?include files.wxs ?>
-				<Directory Id="DesktopFolder" Name="Desktop" />
-				<Directory Id="ProgramMenuFolder" Name="Programs" />
-			</Directory>
+		<Directory Id="DesktopFolder" Name="Desktop" />
+		<Directory Id="ProgramMenuFolder" Name="Programs" />
 		</Directory>
 	</Directory>
 

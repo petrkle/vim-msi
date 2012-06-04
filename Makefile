@@ -1,10 +1,28 @@
-vim.msi: vim.wixobj bitmaps/*.bmp bitmaps/*.ico
-	light.exe -ext WixUIExtension vim.wixobj
-vim.wixobj: vim.wxs files.wxs componets.wxs minimalui.wxs
-	candle.exe vim.wxs
-clean:
-	del /F /Q vim.wixobj vim.wixpdb vim.msi
-install:
-	msiexec /i vim.msi /qr
+PRODUCT=Vim
+VERSION=7.3.46
+SRC=vim
 
-#heat dir vim73 -var var.vimDir -gg -ke -sfrag -out files.wxs
+$(SRC)-$(VERSION).msi: $(SRC).wixobj bitmaps/*.bmp bitmaps/*.ico
+	light.exe -sacl -nologo -ext WixUIExtension -ext WixUtilExtension -out $(SRC)-$(VERSION).msi $(SRC).wixobj
+	msiinfo $(SRC)-$(VERSION).msi /T $(PRODUCT) /nologo
+
+$(SRC).wixobj: $(SRC).wxs files.wxs components.wxs minimalui.wxs
+	candle.exe -nologo -dProductVersion=$(VERSION) -dProductName=$(PRODUCT) -dSRC=$(SRC) $(SRC).wxs
+
+clean:
+	del /F /Q $(SRC).wixobj $(SRC)-$(VERSION).wixpdb $(SRC)-$(VERSION).msi components.wxs files.wxs
+
+install:
+	msiexec /qr /i $(SRC)-$(VERSION).msi
+
+uninstall:
+	msiexec /qr /x $(SRC)-$(VERSION).msi
+
+test:
+	smoke -nologo $(SRC)-$(VERSION).msi
+
+components.wxs: components.xsl
+	heat dir $(SRC) -var var.SRC -indent 1 -sw5150 -nologo -ag -suid -ke -sfrag -t components.xsl -out components.wxs
+
+files.wxs: files.xsl shortcuts.xsl
+	heat dir $(SRC) -var var.SRC -indent 1 -sw5150 -nologo -ag -suid -ke -sfrag -t files.xsl -t shortcuts.xsl -t path.xsl -out files.wxs
