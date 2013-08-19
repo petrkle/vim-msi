@@ -1,8 +1,8 @@
 PRODUCT=Vim
-VERSION=7.3.46
+VERSION=7.4.0
 SRC=vim
 
-$(SRC)-$(VERSION).msi: $(SRC).wixobj bitmaps/*.bmp bitmaps/*.ico
+$(SRC)-$(VERSION).msi: $(SRC).wixobj bitmaps/*.jpg
 	light.exe -sacl -nologo -ext WixUIExtension -ext WixUtilExtension -out $(SRC)-$(VERSION).msi $(SRC).wixobj
 	msiinfo $(SRC)-$(VERSION).msi /T $(PRODUCT) /nologo
 

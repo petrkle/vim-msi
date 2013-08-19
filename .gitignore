@@ -1,0 +1,6 @@
+vim/vim*
+files.wxs
+components.wxs
+*.msi
+*.wixobj
+*.wixpdb

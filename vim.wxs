@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-	<Product Id='8747abf8-9aea-4c69-840b-7ddd6afa1918'
+	<Product Id='d928eda4-2661-4939-b4b1-fae543d28125'
 		Name='$(var.ProductName) $(var.ProductVersion)'
 		Language='1033' 
 		Version='$(var.ProductVersion)'
@@ -19,6 +19,7 @@
 	<InstallExecuteSequence>
 		<RemoveExistingProducts After="InstallInitialize" />
 		<Custom Action="SetARPINSTALLLOCATION" After="InstallValidate" />
+		<Custom Action="SetARPREADME" After="InstallValidate" />
 	</InstallExecuteSequence>
 
 	<Upgrade Id='55032f9f-012d-4e6c-8780-f47b50e4a708'>
@@ -34,10 +35,9 @@
 
   <UIRef Id="WixUI_Common" />
 
-	<WixVariable Id="WixUIBannerBmp" Value="bitmaps\top.bmp" />
-	<WixVariable Id="WixUIDialogBmp" Value="bitmaps\bg.bmp" />
-	<Icon Id="ProductIcon" SourceFile="bitmaps\vim.ico"/>
-	<Property Id="ARPPRODUCTICON" Value="ProductIcon" />
+	<WixVariable Id="WixUIBannerBmp" Value="bitmaps\top.jpg" />
+	<WixVariable Id="WixUIDialogBmp" Value="bitmaps\bg.jpg" />
+	<Property Id="ARPPRODUCTICON" Value="VIM.ico" />
 	<Property Id='ARPCOMMENTS' Value="$(var.ProductName) $(var.ProductVersion)" />
 	<Property Id='ARPCONTACT' Value="http://www.vim.org/community.php" />
 	<Property Id='ARPHELPLINK' Value="http://www.vim.org/docs.php" />
@@ -60,7 +60,8 @@
 		</Directory>
 	</Directory>
 
-	<Icon Id="VIM.ico" SourceFile="bitmaps\vim.ico" />
-	<CustomAction Id="SetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[INSTALLDIR]" />
+	<Icon Id="VIM.ico" SourceFile="vim\vim74\gvim.exe" />
+	<CustomAction Id="SetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[vim]" />
+	<CustomAction Id="SetARPREADME" Property="ARPREADME" Value="[vim]vim74\README.txt" />
 	</Product>
 </Wix>
