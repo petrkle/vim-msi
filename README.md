@@ -10,13 +10,13 @@ command line.
 Contain
 =======
 
-- ftp://ftp.vim.org/pub/vim/pc/gvim74.zip
-- ftp://ftp.vim.org/pub/vim/pc/vim74rt.zip
-- ftp://ftp.vim.org/pub/vim/pc/vim74w32.zip
-- iconv.dll from http://sf.net/projects/gettext/files/libiconv-win32/1.9.1/libiconv-1.9.1.bin.woe32.zip
-- intl.dll from http://sf.net/projects/gettext/files/gettext-win32/0.13.1/gettext-runtime-0.13.1.bin.woe32.zip
+- ftp://ftp.vim.org/pub/vim/pc/gvim80.zip
+- ftp://ftp.vim.org/pub/vim/pc/vim80rt.zip
+- ftp://ftp.vim.org/pub/vim/pc/vim80w32.zip
+- iconv.dll from https://sf.net/projects/gettext/files/libiconv-win32/1.9.1/libiconv-1.9.1.bin.woe32.zip
+- intl.dll from https://sf.net/projects/gettext/files/gettext-win32/0.13.1/gettext-runtime-0.13.1.bin.woe32.zip
 
 Download
 ========
 
-http://sf.net/projects/vim-msi/files/
+https://github.com/petrkle/vim-msi/releases
