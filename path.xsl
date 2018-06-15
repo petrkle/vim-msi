@@ -19,9 +19,9 @@
 
 <xsl:template match="wix:Component[@Id='vim.exe']">
 	<xsl:copy-of select="."/>
-		<Component Id="cmpADDTOPATH" Guid="0ad8a43b-54b1-4214-95ae-52b5d842b938" xmlns="http://schemas.microsoft.com/wix/2006/wi">
+		<Component Id="cmpADDTOPATH" Guid="f3b20bd5-bd1a-42ff-82a3-13dda62abcb3" xmlns="http://schemas.microsoft.com/wix/2006/wi">
 			<CreateFolder />
-			<Environment Id="PATH" Name="PATH" Value="[vim]vim80" Permanent="no" Part="last" Action="set" System="yes" />
+			<Environment Id="PATH" Name="PATH" Value="[vim]vim81" Permanent="no" Part="last" Action="set" System="yes" />
 		</Component>
 </xsl:template>
 

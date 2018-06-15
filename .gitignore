@@ -1,6 +1,7 @@
 vim/vim*
 files.wxs
 components.wxs
+bitmaps/Thumbs*
 *.msi
 *.wixobj
 *.wixpdb
