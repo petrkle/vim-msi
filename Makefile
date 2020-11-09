@@ -1,5 +1,5 @@
 PRODUCT=Vim
-VERSION=8.1.55
+VERSION=8.2.1967
 SRC=vim
 
 $(SRC)-$(VERSION).msi: $(SRC).wixobj bitmaps/*.jpg

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-	<Product Id='cbc96ba1-85f3-41d8-875a-44c2de226761'
+	<Product Id='e44c7274-028a-4c56-ab6c-0dea98903a32'
 		Name='$(var.ProductName) $(var.ProductVersion)'
 		Language='1033' 
 		Version='$(var.ProductVersion)'
@@ -62,6 +62,6 @@
 
 	<Icon Id="VIM.ico" SourceFile="bitmaps\app.ico" />
 	<CustomAction Id="SetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[vim]" />
-	<CustomAction Id="SetARPREADME" Property="ARPREADME" Value="[vim]vim81\README.txt" />
+	<CustomAction Id="SetARPREADME" Property="ARPREADME" Value="[vim]vim82\README.txt" />
 	</Product>
 </Wix>

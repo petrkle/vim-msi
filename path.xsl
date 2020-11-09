@@ -21,7 +21,7 @@
 	<xsl:copy-of select="."/>
 		<Component Id="cmpADDTOPATH" Guid="f3b20bd5-bd1a-42ff-82a3-13dda62abcb3" xmlns="http://schemas.microsoft.com/wix/2006/wi">
 			<CreateFolder />
-			<Environment Id="PATH" Name="PATH" Value="[vim]vim81" Permanent="no" Part="last" Action="set" System="yes" />
+			<Environment Id="PATH" Name="PATH" Value="[vim]vim82" Permanent="no" Part="last" Action="set" System="yes" />
 		</Component>
 </xsl:template>
 

@@ -23,7 +23,7 @@
 							Directory="DesktopFolder"
 							Name="$(var.ProductName)"
 							Icon="VIM.ico"
-							WorkingDirectory="vim81"
+							WorkingDirectory="vim82"
 							xmlns="http://schemas.microsoft.com/wix/2006/wi" />
 
 						<Shortcut Id="startmenulink"
@@ -31,7 +31,7 @@
 							Directory="ProgramMenuFolder"
 							Name="$(var.ProductName)"
 							Icon="VIM.ico"
-							WorkingDirectory="vim81"
+							WorkingDirectory="vim82"
 							xmlns="http://schemas.microsoft.com/wix/2006/wi" />
 </xsl:template>
 
